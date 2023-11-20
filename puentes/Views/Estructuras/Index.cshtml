@@ -1,0 +1,112 @@
+﻿@model IEnumerable<puentes.Models.Estructuras>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h2>Lista Cajas y Puentes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EstructuraTipoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarreteraId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartamentoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MunicipioId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PMS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PKM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnioConstruccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogoCarreteraId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogoRequisitoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaRecoleccionDatos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstructuraTipoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarreteraId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartamentoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MunicipioId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PMS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PKM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnioConstruccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogoCarreteraId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogoRequisitoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRecoleccionDatos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EstructuraId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EstructuraId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EstructuraId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<puentes.Models.DTSuperEstructuras>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DiseñoTipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiseñoSeccTransvId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiseñoElevacionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuperEstrucClasificacionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiseñoTipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiseñoSeccTransvId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiseñoElevacionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuperEstrucClasificacionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DTSuperEstrucId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DTSuperEstrucId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DTSuperEstrucId })
+        </td>
+    </tr>
+}
+
+</table>

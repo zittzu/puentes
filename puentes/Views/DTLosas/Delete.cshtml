@@ -1,0 +1,88 @@
+﻿@model puentes.Models.DTLosa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DTLosa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LosaInferior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LosaInferior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LosaSuperior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LosaSuperior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeccionTrasversa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeccionTrasversa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiseñoDeEvaluacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiseñoDeEvaluacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Espesor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Espesor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

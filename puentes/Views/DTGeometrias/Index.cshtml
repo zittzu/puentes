@@ -1,0 +1,117 @@
+﻿@model IEnumerable<puentes.Models.DTGeometrias>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Numeroclaros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudClaroMinimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudClaroMaximos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoMediana)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoAceraIzq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoAceraDer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoCalzada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoBordillos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnchoAcceso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurvaTangente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esviajamiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numeroclaros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudClaroMinimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudClaroMaximos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoMediana)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoAceraIzq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoAceraDer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoCalzada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoBordillos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnchoAcceso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurvaTangente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esviajamiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DTGeometriaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DTGeometriaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DTGeometriaId })
+        </td>
+    </tr>
+}
+
+</table>

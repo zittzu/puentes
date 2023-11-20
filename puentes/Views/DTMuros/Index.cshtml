@@ -1,0 +1,57 @@
+﻿@model IEnumerable<puentes.Models.DTMuros>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MuroTipoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialTipoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Espesor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CimentacionTipoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MuroTipoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialTipoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Espesor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CimentacionTipoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DTMuroId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DTMuroId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DTMuroId })
+        </td>
+    </tr>
+}
+
+</table>

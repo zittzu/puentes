@@ -1,0 +1,133 @@
+﻿@model puentes.Models.Estructuras
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Cajas Puentes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstructuraTipoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstructuraTipoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroRegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarreteraId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarreteraId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartamentoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PKM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PKM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnioConstruccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnioConstruccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoCarreteraId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoCarreteraId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoRequisitoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoRequisitoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRecoleccionDatos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaRecoleccionDatos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EstructuraId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

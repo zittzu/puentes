@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4d273472872f4e429fe10506c915e0a0" Name="Diagram1" ZoomLevel="29">
+        <EntityTypeShape EntityType="DBPUENTESModel.Auditoria" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Catalogos" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DatosAdministrativos" Width="1.5" PointX="17.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DibujoCroquis" Width="1.5" PointX="24.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTDetalles" Width="1.5" PointX="25.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTGeometrias" Width="1.5" PointX="27.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTLosa" Width="1.5" PointX="13.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTMuros" Width="1.5" PointX="13.625" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTSubEstructuras" Width="1.5" PointX="13.625" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.DTSuperEstructuras" Width="1.5" PointX="13.625" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.EstructuraDetalles" Width="1.5" PointX="21.375" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Estructuras" Width="1.5" PointX="20.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.InspeccionComponenteFotos" Width="1.5" PointX="17.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.InspeccionComponentes" Width="1.5" PointX="15.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Inspecciones" Width="1.5" PointX="13.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Miscelaneas" Width="1.5" PointX="24.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Priorizaciones" Width="1.5" PointX="27.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.tablarol" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.tablausuario" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.TipoCatalogos" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.TrabajosEstandar" Width="1.5" PointX="17.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPUENTESModel.Tramos" Width="1.5" PointX="24.5" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DatosAdministrativos_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DibujoCroquis_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DTDetalles_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DatosTecnicos_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DTLosa_Estructura" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DTMuros_Estructuras" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DTSubEstructuras_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_DTSuperEstructuras_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_PuenteDetalle_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_Inspecciones_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_Miscelaneas_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_Priorizaciones_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_Tramos_Puentes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_ComponenteFotos_ComponenteDetalles" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_ComponenteDetalles_Inspecciones" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPUENTESModel.FK_TrabajosEstandar_InspeccionComponentes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,171 @@
+﻿@model IEnumerable<puentes.Models.Tramos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumPaso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPasoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasoPrimero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PMSkm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PMSm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PKMkm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PKMm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargaDiseño)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaseDistribCargaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NormaDiseñoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GaliboVerticalI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GaliboVerticalIM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GaliboVerticalDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GaliboVerticalD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClasePuente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restringido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargaEjeMaxima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsultorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCapacidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumPaso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoPasoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasoPrimero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PMSkm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PMSm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PKMkm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PKMm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargaDiseño)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaseDistribCargaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NormaDiseñoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GaliboVerticalI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GaliboVerticalIM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GaliboVerticalDM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GaliboVerticalD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClasePuente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restringido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargaEjeMaxima)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsultorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCapacidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TramoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TramoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TramoId })
+        </td>
+    </tr>
+}
+
+</table>

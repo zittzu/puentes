@@ -1,0 +1,1679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBPUENTESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="AuditoriaId" />
+          </Key>
+          <Property Name="AuditoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Entidad" Type="nvarchar" MaxLength="400" />
+          <Property Name="ValorKeyEntidad" Type="bigint" />
+          <Property Name="UsuarioId" Type="int" />
+          <Property Name="UsuarioName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operacion" Type="nvarchar" MaxLength="10" />
+          <Property Name="ValoresAnterior" Type="xml" />
+          <Property Name="ValoresNuevo" Type="xml" />
+          <Property Name="MaquinaIp" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Catalogos">
+          <Key>
+            <PropertyRef Name="CatalogoId" />
+          </Key>
+          <Property Name="CatalogoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoCatalogoId" Type="int" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" />
+          <Property Name="Nombre" Type="varchar" MaxLength="250" />
+          <Property Name="EstadoId" Type="int" />
+        </EntityType>
+        <EntityType Name="DatosAdministrativos">
+          <Key>
+            <PropertyRef Name="DatosAdminId" />
+          </Key>
+          <Property Name="DatosAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="AnioReconstruccion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DibujoCroquis">
+          <Key>
+            <PropertyRef Name="DibujoCroquisId" />
+          </Key>
+          <Property Name="DibujoCroquisId" Type="int" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="250" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="RutaDibujo" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="DTDetalles">
+          <Key>
+            <PropertyRef Name="DTDetalleId" />
+          </Key>
+          <Property Name="DTDetalleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="TipoBarandaId" Type="int" />
+          <Property Name="TipoDefensaId" Type="int" />
+          <Property Name="TipoSuperRodId" Type="int" />
+          <Property Name="TipoJuntaExpId" Type="int" />
+          <Property Name="TipoApoyoFSoporteId" Type="int" />
+          <Property Name="TipoApoyoMSoporteId" Type="int" />
+          <Property Name="TipoApoyoFVigasId" Type="int" />
+          <Property Name="TipoApoyoMVigasId" Type="int" />
+        </EntityType>
+        <EntityType Name="DTGeometrias">
+          <Key>
+            <PropertyRef Name="DTGeometriaId" />
+          </Key>
+          <Property Name="DTGeometriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="Numeroclaros" Type="float" />
+          <Property Name="LongitudClaroMinimo" Type="float" />
+          <Property Name="LongitudClaroMaximos" Type="float" />
+          <Property Name="LongitudTotal" Type="float" />
+          <Property Name="AnchoTotal" Type="float" />
+          <Property Name="AnchoMediana" Type="float" />
+          <Property Name="AnchoAceraIzq" Type="float" />
+          <Property Name="AnchoAceraDer" Type="float" />
+          <Property Name="AnchoCalzada" Type="float" />
+          <Property Name="AnchoBordillos" Type="float" />
+          <Property Name="AnchoAcceso" Type="float" />
+          <Property Name="Area" Type="float" />
+          <Property Name="CurvaTangente" Type="float" />
+          <Property Name="Esviajamiento" Type="float" />
+        </EntityType>
+        <EntityType Name="DTLosa">
+          <Key>
+            <PropertyRef Name="DTLosaId" />
+          </Key>
+          <Property Name="DTLosaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="LosaInferior" Type="varchar" MaxLength="30" />
+          <Property Name="LosaSuperior" Type="varchar" MaxLength="30" />
+          <Property Name="SeccionTrasversa" Type="varchar" MaxLength="30" />
+          <Property Name="DiseñoDeEvaluacion" Type="varchar" MaxLength="30" />
+          <Property Name="MaterialId" Type="int" />
+          <Property Name="Espesor" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="MunicipioID" Type="int" />
+        </EntityType>
+        <EntityType Name="DTMuros">
+          <Key>
+            <PropertyRef Name="DTMuroId" />
+          </Key>
+          <Property Name="DTMuroId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="MuroTipoId" Type="int" />
+          <Property Name="MaterialTipoId" Type="int" />
+          <Property Name="Espesor" Type="float" />
+          <Property Name="CimentacionTipoId" Type="int" />
+        </EntityType>
+        <EntityType Name="DTSubEstructuras">
+          <Key>
+            <PropertyRef Name="DTSubEstrucId" />
+          </Key>
+          <Property Name="DTSubEstrucId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="SubEstrucTipoId" Type="int" />
+          <Property Name="MaterialId" Type="int" />
+          <Property Name="TipoCimentacionId" Type="int" />
+          <Property Name="SubEstrucClasificacionId" Type="int" />
+        </EntityType>
+        <EntityType Name="DTSuperEstructuras">
+          <Key>
+            <PropertyRef Name="DTSuperEstrucId" />
+          </Key>
+          <Property Name="DTSuperEstrucId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="DiseñoTipo" Type="bit" />
+          <Property Name="DiseñoSeccTransvId" Type="int" />
+          <Property Name="DiseñoElevacionId" Type="int" />
+          <Property Name="MaterialId" Type="int" />
+          <Property Name="SuperEstrucClasificacionId" Type="int" />
+        </EntityType>
+        <EntityType Name="EstructuraDetalles">
+          <Key>
+            <PropertyRef Name="EstructuraDetalleId" />
+          </Key>
+          <Property Name="EstructuraDetalleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="PasoCauce" Type="bit" />
+          <Property Name="Desviacion" Type="bit" />
+          <Property Name="LongitudRutaDir" Type="int" />
+          <Property Name="DesviacionPavim" Type="bit" />
+          <Property Name="DesviacionEstSeca" Type="int" />
+          <Property Name="DesviacionEstLluvia" Type="int" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Estructuras">
+          <Key>
+            <PropertyRef Name="EstructuraId" />
+          </Key>
+          <Property Name="EstructuraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraTipoId" Type="int" />
+          <Property Name="NumeroRegistro" Type="int" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="CarreteraId" Type="int" />
+          <Property Name="DepartamentoId" Type="int" />
+          <Property Name="MunicipioId" Type="int" />
+          <Property Name="PMS" Type="varchar" MaxLength="50" />
+          <Property Name="PKM" Type="varchar" MaxLength="50" />
+          <Property Name="AnioConstruccion" Type="int" />
+          <Property Name="CatalogoCarreteraId" Type="int" />
+          <Property Name="CatalogoRequisitoId" Type="int" />
+          <Property Name="FechaRecoleccionDatos" Type="datetime" />
+          <Property Name="EstadoId" Type="int" />
+        </EntityType>
+        <EntityType Name="InspeccionComponenteFotos">
+          <Key>
+            <PropertyRef Name="InspeccionComponenteFotoId" />
+          </Key>
+          <Property Name="InspeccionComponenteFotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InspeccionComponenteId" Type="int" />
+          <Property Name="RutaFotos" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="InspeccionComponentes">
+          <Key>
+            <PropertyRef Name="InspeccionComponenteId" />
+          </Key>
+          <Property Name="InspeccionComponenteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InspeccionId" Type="int" />
+          <Property Name="ComponenteId" Type="int" />
+          <Property Name="Calificacion" Type="nchar" MaxLength="10" />
+          <Property Name="Mantenimiento" Type="int" />
+          <Property Name="InspeccionEspecial" Type="int" />
+          <Property Name="NumFotos" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="TipoDañoId" Type="int" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Anio" Type="int" />
+          <Property Name="Costo" Type="float" />
+        </EntityType>
+        <EntityType Name="Inspecciones">
+          <Key>
+            <PropertyRef Name="InspeccionId" />
+          </Key>
+          <Property Name="InspeccionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="TipoInspeccionId" Type="int" />
+          <Property Name="AnioProxInsp" Type="datetime" />
+          <Property Name="TransitoTPDA" Type="int" />
+          <Property Name="EstacionConteo" Type="int" />
+          <Property Name="VehLivianos" Type="float" />
+          <Property Name="VehPesados" Type="float" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Miscelaneas">
+          <Key>
+            <PropertyRef Name="MiscelaneaId" />
+          </Key>
+          <Property Name="MiscelaneaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="RespInspeccionId" Type="int" />
+          <Property Name="ProyectistaId" Type="int" />
+          <Property Name="LatitudG" Type="float" />
+          <Property Name="LatitudM" Type="float" />
+          <Property Name="LatitudS" Type="float" />
+          <Property Name="LongitudG" Type="float" />
+          <Property Name="LongitudM" Type="float" />
+          <Property Name="LongitudS" Type="float" />
+          <Property Name="Altitud" Type="float" />
+          <Property Name="TipoInstalacionesId" Type="int" />
+        </EntityType>
+        <EntityType Name="Priorizaciones">
+          <Key>
+            <PropertyRef Name="PriorizacionId" />
+          </Key>
+          <Property Name="PriorizacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="Calificacion" Type="nchar" MaxLength="10" />
+          <Property Name="Pririzacion" Type="nchar" MaxLength="10" />
+          <Property Name="PriorizacionFinal" Type="nchar" MaxLength="10" />
+          <Property Name="Costo" Type="nchar" MaxLength="10" />
+          <Property Name="Transito" Type="nchar" MaxLength="10" />
+          <Property Name="Descripcion" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tablarol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nombreRol" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tablausuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Idrol" Type="int" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Usuario" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TipoCatalogos">
+          <Key>
+            <PropertyRef Name="TipoCatalogoId" />
+          </Key>
+          <Property Name="TipoCatalogoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="EstadoId" Type="int" />
+        </EntityType>
+        <EntityType Name="TrabajosEstandar">
+          <Key>
+            <PropertyRef Name="TrabajoEstandarId" />
+          </Key>
+          <Property Name="TrabajoEstandarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InspeccionComponenteId" Type="int" />
+          <Property Name="Unidad" Type="nchar" MaxLength="10" />
+          <Property Name="Precio" Type="nchar" MaxLength="10" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tramos">
+          <Key>
+            <PropertyRef Name="TramoId" />
+          </Key>
+          <Property Name="TramoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstructuraId" Type="int" />
+          <Property Name="NumPaso" Type="int" />
+          <Property Name="TipoPasoId" Type="int" />
+          <Property Name="PasoPrimero" Type="bit" />
+          <Property Name="Paso" Type="bit" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Lado" Type="int" />
+          <Property Name="PMSkm" Type="float" />
+          <Property Name="PMSm" Type="float" />
+          <Property Name="PKMkm" Type="float" />
+          <Property Name="PKMm" Type="float" />
+          <Property Name="CargaDiseño" Type="varchar" MaxLength="50" />
+          <Property Name="ClaseDistribCargaId" Type="int" />
+          <Property Name="NormaDiseñoId" Type="int" />
+          <Property Name="GaliboVerticalI" Type="float" />
+          <Property Name="GaliboVerticalIM" Type="float" />
+          <Property Name="GaliboVerticalDM" Type="float" />
+          <Property Name="GaliboVerticalD" Type="float" />
+          <Property Name="ClasePuente" Type="float" />
+          <Property Name="Restringido" Type="bit" />
+          <Property Name="CargaEjeMaxima" Type="float" />
+          <Property Name="ConsultorId" Type="int" />
+          <Property Name="FechaCapacidad" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_ComponenteDetalles_Inspecciones">
+          <End Role="Inspecciones" Type="Self.Inspecciones" Multiplicity="0..1" />
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inspecciones">
+              <PropertyRef Name="InspeccionId" />
+            </Principal>
+            <Dependent Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComponenteFotos_ComponenteDetalles">
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="0..1" />
+          <End Role="InspeccionComponenteFotos" Type="Self.InspeccionComponenteFotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Principal>
+            <Dependent Role="InspeccionComponenteFotos">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosAdministrativos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DatosAdministrativos" Type="Self.DatosAdministrativos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DatosAdministrativos">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosTecnicos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTGeometrias" Type="Self.DTGeometrias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTGeometrias">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DibujoCroquis_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DibujoCroquis" Type="Self.DibujoCroquis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DibujoCroquis">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTDetalles_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTDetalles" Type="Self.DTDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTDetalles">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTLosa_Estructura">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTLosa" Type="Self.DTLosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTLosa">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTMuros_Estructuras">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTMuros" Type="Self.DTMuros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTMuros">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTSubEstructuras_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTSubEstructuras" Type="Self.DTSubEstructuras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTSubEstructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTSuperEstructuras_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTSuperEstructuras" Type="Self.DTSuperEstructuras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTSuperEstructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inspecciones_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Inspecciones" Type="Self.Inspecciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Inspecciones">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Miscelaneas_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Miscelaneas" Type="Self.Miscelaneas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Miscelaneas">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Priorizaciones_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Priorizaciones" Type="Self.Priorizaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Priorizaciones">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuenteDetalle_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="EstructuraDetalles" Type="Self.EstructuraDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="EstructuraDetalles">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrabajosEstandar_InspeccionComponentes">
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="0..1" />
+          <End Role="TrabajosEstandar" Type="Self.TrabajosEstandar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Principal>
+            <Dependent Role="TrabajosEstandar">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tramos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Tramos" Type="Self.Tramos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Tramos">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DBPUENTESModelStoreContainer">
+          <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogos" EntityType="Self.Catalogos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DatosAdministrativos" EntityType="Self.DatosAdministrativos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DibujoCroquis" EntityType="Self.DibujoCroquis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTDetalles" EntityType="Self.DTDetalles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTGeometrias" EntityType="Self.DTGeometrias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTLosa" EntityType="Self.DTLosa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTMuros" EntityType="Self.DTMuros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTSubEstructuras" EntityType="Self.DTSubEstructuras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTSuperEstructuras" EntityType="Self.DTSuperEstructuras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstructuraDetalles" EntityType="Self.EstructuraDetalles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estructuras" EntityType="Self.Estructuras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InspeccionComponenteFotos" EntityType="Self.InspeccionComponenteFotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InspeccionComponentes" EntityType="Self.InspeccionComponentes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inspecciones" EntityType="Self.Inspecciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Miscelaneas" EntityType="Self.Miscelaneas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Priorizaciones" EntityType="Self.Priorizaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tablarol" EntityType="Self.tablarol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tablausuario" EntityType="Self.tablausuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoCatalogos" EntityType="Self.TipoCatalogos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrabajosEstandar" EntityType="Self.TrabajosEstandar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tramos" EntityType="Self.Tramos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ComponenteDetalles_Inspecciones" Association="Self.FK_ComponenteDetalles_Inspecciones">
+            <End Role="Inspecciones" EntitySet="Inspecciones" />
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComponenteFotos_ComponenteDetalles" Association="Self.FK_ComponenteFotos_ComponenteDetalles">
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+            <End Role="InspeccionComponenteFotos" EntitySet="InspeccionComponenteFotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosAdministrativos_Puentes" Association="Self.FK_DatosAdministrativos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DatosAdministrativos" EntitySet="DatosAdministrativos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosTecnicos_Puentes" Association="Self.FK_DatosTecnicos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTGeometrias" EntitySet="DTGeometrias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DibujoCroquis_Puentes" Association="Self.FK_DibujoCroquis_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DibujoCroquis" EntitySet="DibujoCroquis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTDetalles_Puentes" Association="Self.FK_DTDetalles_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTDetalles" EntitySet="DTDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTLosa_Estructura" Association="Self.FK_DTLosa_Estructura">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTLosa" EntitySet="DTLosa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTMuros_Estructuras" Association="Self.FK_DTMuros_Estructuras">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTMuros" EntitySet="DTMuros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTSubEstructuras_Puentes" Association="Self.FK_DTSubEstructuras_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTSubEstructuras" EntitySet="DTSubEstructuras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTSuperEstructuras_Puentes" Association="Self.FK_DTSuperEstructuras_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTSuperEstructuras" EntitySet="DTSuperEstructuras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inspecciones_Puentes" Association="Self.FK_Inspecciones_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Inspecciones" EntitySet="Inspecciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Miscelaneas_Puentes" Association="Self.FK_Miscelaneas_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Miscelaneas" EntitySet="Miscelaneas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Priorizaciones_Puentes" Association="Self.FK_Priorizaciones_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Priorizaciones" EntitySet="Priorizaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuenteDetalle_Puentes" Association="Self.FK_PuenteDetalle_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="EstructuraDetalles" EntitySet="EstructuraDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrabajosEstandar_InspeccionComponentes" Association="Self.FK_TrabajosEstandar_InspeccionComponentes">
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+            <End Role="TrabajosEstandar" EntitySet="TrabajosEstandar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tramos_Puentes" Association="Self.FK_Tramos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Tramos" EntitySet="Tramos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBPUENTESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="AuditoriaId" />
+          </Key>
+          <Property Name="AuditoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Entidad" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="ValorKeyEntidad" Type="Int64" />
+          <Property Name="UsuarioId" Type="Int32" />
+          <Property Name="UsuarioName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operacion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ValoresAnterior" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ValoresNuevo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaquinaIp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Catalogos">
+          <Key>
+            <PropertyRef Name="CatalogoId" />
+          </Key>
+          <Property Name="CatalogoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoCatalogoId" Type="Int32" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EstadoId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DatosAdministrativos">
+          <Key>
+            <PropertyRef Name="DatosAdminId" />
+          </Key>
+          <Property Name="DatosAdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="AnioReconstruccion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DatosAdministrativos_Puentes" FromRole="DatosAdministrativos" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DibujoCroquis">
+          <Key>
+            <PropertyRef Name="DibujoCroquisId" />
+          </Key>
+          <Property Name="DibujoCroquisId" Type="Int32" Nullable="false" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="RutaDibujo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DibujoCroquis_Puentes" FromRole="DibujoCroquis" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTDetalles">
+          <Key>
+            <PropertyRef Name="DTDetalleId" />
+          </Key>
+          <Property Name="DTDetalleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="TipoBarandaId" Type="Int32" />
+          <Property Name="TipoDefensaId" Type="Int32" />
+          <Property Name="TipoSuperRodId" Type="Int32" />
+          <Property Name="TipoJuntaExpId" Type="Int32" />
+          <Property Name="TipoApoyoFSoporteId" Type="Int32" />
+          <Property Name="TipoApoyoMSoporteId" Type="Int32" />
+          <Property Name="TipoApoyoFVigasId" Type="Int32" />
+          <Property Name="TipoApoyoMVigasId" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DTDetalles_Puentes" FromRole="DTDetalles" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTGeometrias">
+          <Key>
+            <PropertyRef Name="DTGeometriaId" />
+          </Key>
+          <Property Name="DTGeometriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="Numeroclaros" Type="Double" />
+          <Property Name="LongitudClaroMinimo" Type="Double" />
+          <Property Name="LongitudClaroMaximos" Type="Double" />
+          <Property Name="LongitudTotal" Type="Double" />
+          <Property Name="AnchoTotal" Type="Double" />
+          <Property Name="AnchoMediana" Type="Double" />
+          <Property Name="AnchoAceraIzq" Type="Double" />
+          <Property Name="AnchoAceraDer" Type="Double" />
+          <Property Name="AnchoCalzada" Type="Double" />
+          <Property Name="AnchoBordillos" Type="Double" />
+          <Property Name="AnchoAcceso" Type="Double" />
+          <Property Name="Area" Type="Double" />
+          <Property Name="CurvaTangente" Type="Double" />
+          <Property Name="Esviajamiento" Type="Double" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DatosTecnicos_Puentes" FromRole="DTGeometrias" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTLosa">
+          <Key>
+            <PropertyRef Name="DTLosaId" />
+          </Key>
+          <Property Name="DTLosaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="LosaInferior" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LosaSuperior" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SeccionTrasversa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DiseñoDeEvaluacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialId" Type="Int32" />
+          <Property Name="Espesor" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="MunicipioID" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DTLosa_Estructura" FromRole="DTLosa" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTMuros">
+          <Key>
+            <PropertyRef Name="DTMuroId" />
+          </Key>
+          <Property Name="DTMuroId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="MuroTipoId" Type="Int32" />
+          <Property Name="MaterialTipoId" Type="Int32" />
+          <Property Name="Espesor" Type="Double" />
+          <Property Name="CimentacionTipoId" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DTMuros_Estructuras" FromRole="DTMuros" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTSubEstructuras">
+          <Key>
+            <PropertyRef Name="DTSubEstrucId" />
+          </Key>
+          <Property Name="DTSubEstrucId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="SubEstrucTipoId" Type="Int32" />
+          <Property Name="MaterialId" Type="Int32" />
+          <Property Name="TipoCimentacionId" Type="Int32" />
+          <Property Name="SubEstrucClasificacionId" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DTSubEstructuras_Puentes" FromRole="DTSubEstructuras" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="DTSuperEstructuras">
+          <Key>
+            <PropertyRef Name="DTSuperEstrucId" />
+          </Key>
+          <Property Name="DTSuperEstrucId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="DiseñoTipo" Type="Boolean" />
+          <Property Name="DiseñoSeccTransvId" Type="Int32" />
+          <Property Name="DiseñoElevacionId" Type="Int32" />
+          <Property Name="MaterialId" Type="Int32" />
+          <Property Name="SuperEstrucClasificacionId" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_DTSuperEstructuras_Puentes" FromRole="DTSuperEstructuras" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="EstructuraDetalles">
+          <Key>
+            <PropertyRef Name="EstructuraDetalleId" />
+          </Key>
+          <Property Name="EstructuraDetalleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="PasoCauce" Type="Boolean" />
+          <Property Name="Desviacion" Type="Boolean" />
+          <Property Name="LongitudRutaDir" Type="Int32" />
+          <Property Name="DesviacionPavim" Type="Boolean" />
+          <Property Name="DesviacionEstSeca" Type="Int32" />
+          <Property Name="DesviacionEstLluvia" Type="Int32" />
+          <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_PuenteDetalle_Puentes" FromRole="EstructuraDetalles" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="Estructuras">
+          <Key>
+            <PropertyRef Name="EstructuraId" />
+          </Key>
+          <Property Name="EstructuraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraTipoId" Type="Int32" />
+          <Property Name="NumeroRegistro" Type="Int32" />
+          <Property Name="Identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarreteraId" Type="Int32" />
+          <Property Name="DepartamentoId" Type="Int32" />
+          <Property Name="MunicipioId" Type="Int32" />
+          <Property Name="PMS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PKM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnioConstruccion" Type="Int32" />
+          <Property Name="CatalogoCarreteraId" Type="Int32" />
+          <Property Name="CatalogoRequisitoId" Type="Int32" />
+          <Property Name="FechaRecoleccionDatos" Type="DateTime" Precision="3" />
+          <Property Name="EstadoId" Type="Int32" />
+          <NavigationProperty Name="DatosAdministrativos" Relationship="Self.FK_DatosAdministrativos_Puentes" FromRole="Estructuras" ToRole="DatosAdministrativos" />
+          <NavigationProperty Name="DibujoCroquis" Relationship="Self.FK_DibujoCroquis_Puentes" FromRole="Estructuras" ToRole="DibujoCroquis" />
+          <NavigationProperty Name="DTDetalles" Relationship="Self.FK_DTDetalles_Puentes" FromRole="Estructuras" ToRole="DTDetalles" />
+          <NavigationProperty Name="DTGeometrias" Relationship="Self.FK_DatosTecnicos_Puentes" FromRole="Estructuras" ToRole="DTGeometrias" />
+          <NavigationProperty Name="DTLosa" Relationship="Self.FK_DTLosa_Estructura" FromRole="Estructuras" ToRole="DTLosa" />
+          <NavigationProperty Name="DTMuros" Relationship="Self.FK_DTMuros_Estructuras" FromRole="Estructuras" ToRole="DTMuros" />
+          <NavigationProperty Name="DTSubEstructuras" Relationship="Self.FK_DTSubEstructuras_Puentes" FromRole="Estructuras" ToRole="DTSubEstructuras" />
+          <NavigationProperty Name="DTSuperEstructuras" Relationship="Self.FK_DTSuperEstructuras_Puentes" FromRole="Estructuras" ToRole="DTSuperEstructuras" />
+          <NavigationProperty Name="EstructuraDetalles" Relationship="Self.FK_PuenteDetalle_Puentes" FromRole="Estructuras" ToRole="EstructuraDetalles" />
+          <NavigationProperty Name="Inspecciones" Relationship="Self.FK_Inspecciones_Puentes" FromRole="Estructuras" ToRole="Inspecciones" />
+          <NavigationProperty Name="Miscelaneas" Relationship="Self.FK_Miscelaneas_Puentes" FromRole="Estructuras" ToRole="Miscelaneas" />
+          <NavigationProperty Name="Priorizaciones" Relationship="Self.FK_Priorizaciones_Puentes" FromRole="Estructuras" ToRole="Priorizaciones" />
+          <NavigationProperty Name="Tramos" Relationship="Self.FK_Tramos_Puentes" FromRole="Estructuras" ToRole="Tramos" />
+        </EntityType>
+        <EntityType Name="InspeccionComponenteFotos">
+          <Key>
+            <PropertyRef Name="InspeccionComponenteFotoId" />
+          </Key>
+          <Property Name="InspeccionComponenteFotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InspeccionComponenteId" Type="Int32" />
+          <Property Name="RutaFotos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InspeccionComponentes" Relationship="Self.FK_ComponenteFotos_ComponenteDetalles" FromRole="InspeccionComponenteFotos" ToRole="InspeccionComponentes" />
+        </EntityType>
+        <EntityType Name="InspeccionComponentes">
+          <Key>
+            <PropertyRef Name="InspeccionComponenteId" />
+          </Key>
+          <Property Name="InspeccionComponenteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InspeccionId" Type="Int32" />
+          <Property Name="ComponenteId" Type="Int32" />
+          <Property Name="Calificacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Mantenimiento" Type="Int32" />
+          <Property Name="InspeccionEspecial" Type="Int32" />
+          <Property Name="NumFotos" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TipoDañoId" Type="Int32" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Anio" Type="Int32" />
+          <Property Name="Costo" Type="Double" />
+          <NavigationProperty Name="InspeccionComponenteFotos" Relationship="Self.FK_ComponenteFotos_ComponenteDetalles" FromRole="InspeccionComponentes" ToRole="InspeccionComponenteFotos" />
+          <NavigationProperty Name="Inspecciones" Relationship="Self.FK_ComponenteDetalles_Inspecciones" FromRole="InspeccionComponentes" ToRole="Inspecciones" />
+          <NavigationProperty Name="TrabajosEstandar" Relationship="Self.FK_TrabajosEstandar_InspeccionComponentes" FromRole="InspeccionComponentes" ToRole="TrabajosEstandar" />
+        </EntityType>
+        <EntityType Name="Inspecciones">
+          <Key>
+            <PropertyRef Name="InspeccionId" />
+          </Key>
+          <Property Name="InspeccionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="TipoInspeccionId" Type="Int32" />
+          <Property Name="AnioProxInsp" Type="DateTime" Precision="3" />
+          <Property Name="TransitoTPDA" Type="Int32" />
+          <Property Name="EstacionConteo" Type="Int32" />
+          <Property Name="VehLivianos" Type="Double" />
+          <Property Name="VehPesados" Type="Double" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_Inspecciones_Puentes" FromRole="Inspecciones" ToRole="Estructuras" />
+          <NavigationProperty Name="InspeccionComponentes" Relationship="Self.FK_ComponenteDetalles_Inspecciones" FromRole="Inspecciones" ToRole="InspeccionComponentes" />
+        </EntityType>
+        <EntityType Name="Miscelaneas">
+          <Key>
+            <PropertyRef Name="MiscelaneaId" />
+          </Key>
+          <Property Name="MiscelaneaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="RespInspeccionId" Type="Int32" />
+          <Property Name="ProyectistaId" Type="Int32" />
+          <Property Name="LatitudG" Type="Double" />
+          <Property Name="LatitudM" Type="Double" />
+          <Property Name="LatitudS" Type="Double" />
+          <Property Name="LongitudG" Type="Double" />
+          <Property Name="LongitudM" Type="Double" />
+          <Property Name="LongitudS" Type="Double" />
+          <Property Name="Altitud" Type="Double" />
+          <Property Name="TipoInstalacionesId" Type="Int32" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_Miscelaneas_Puentes" FromRole="Miscelaneas" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="Priorizaciones">
+          <Key>
+            <PropertyRef Name="PriorizacionId" />
+          </Key>
+          <Property Name="PriorizacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="Calificacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Pririzacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PriorizacionFinal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Costo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Transito" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_Priorizaciones_Puentes" FromRole="Priorizaciones" ToRole="Estructuras" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tablarol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nombreRol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tablausuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Idrol" Type="Int32" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TipoCatalogos">
+          <Key>
+            <PropertyRef Name="TipoCatalogoId" />
+          </Key>
+          <Property Name="TipoCatalogoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrabajosEstandar">
+          <Key>
+            <PropertyRef Name="TrabajoEstandarId" />
+          </Key>
+          <Property Name="TrabajoEstandarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InspeccionComponenteId" Type="Int32" />
+          <Property Name="Unidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Precio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InspeccionComponentes" Relationship="Self.FK_TrabajosEstandar_InspeccionComponentes" FromRole="TrabajosEstandar" ToRole="InspeccionComponentes" />
+        </EntityType>
+        <EntityType Name="Tramos">
+          <Key>
+            <PropertyRef Name="TramoId" />
+          </Key>
+          <Property Name="TramoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstructuraId" Type="Int32" />
+          <Property Name="NumPaso" Type="Int32" />
+          <Property Name="TipoPasoId" Type="Int32" />
+          <Property Name="PasoPrimero" Type="Boolean" />
+          <Property Name="Paso" Type="Boolean" />
+          <Property Name="Identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lado" Type="Int32" />
+          <Property Name="PMSkm" Type="Double" />
+          <Property Name="PMSm" Type="Double" />
+          <Property Name="PKMkm" Type="Double" />
+          <Property Name="PKMm" Type="Double" />
+          <Property Name="CargaDiseño" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClaseDistribCargaId" Type="Int32" />
+          <Property Name="NormaDiseñoId" Type="Int32" />
+          <Property Name="GaliboVerticalI" Type="Double" />
+          <Property Name="GaliboVerticalIM" Type="Double" />
+          <Property Name="GaliboVerticalDM" Type="Double" />
+          <Property Name="GaliboVerticalD" Type="Double" />
+          <Property Name="ClasePuente" Type="Double" />
+          <Property Name="Restringido" Type="Boolean" />
+          <Property Name="CargaEjeMaxima" Type="Double" />
+          <Property Name="ConsultorId" Type="Int32" />
+          <Property Name="FechaCapacidad" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Estructuras" Relationship="Self.FK_Tramos_Puentes" FromRole="Tramos" ToRole="Estructuras" />
+        </EntityType>
+        <Association Name="FK_DatosAdministrativos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DatosAdministrativos" Type="Self.DatosAdministrativos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DatosAdministrativos">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DibujoCroquis_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DibujoCroquis" Type="Self.DibujoCroquis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DibujoCroquis">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTDetalles_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTDetalles" Type="Self.DTDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTDetalles">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosTecnicos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTGeometrias" Type="Self.DTGeometrias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTGeometrias">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTLosa_Estructura">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTLosa" Type="Self.DTLosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTLosa">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTMuros_Estructuras">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTMuros" Type="Self.DTMuros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTMuros">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTSubEstructuras_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTSubEstructuras" Type="Self.DTSubEstructuras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTSubEstructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTSuperEstructuras_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="DTSuperEstructuras" Type="Self.DTSuperEstructuras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="DTSuperEstructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuenteDetalle_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="EstructuraDetalles" Type="Self.EstructuraDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="EstructuraDetalles">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inspecciones_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Inspecciones" Type="Self.Inspecciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Inspecciones">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Miscelaneas_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Miscelaneas" Type="Self.Miscelaneas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Miscelaneas">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Priorizaciones_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Priorizaciones" Type="Self.Priorizaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Priorizaciones">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tramos_Puentes">
+          <End Role="Estructuras" Type="Self.Estructuras" Multiplicity="0..1" />
+          <End Role="Tramos" Type="Self.Tramos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructuras">
+              <PropertyRef Name="EstructuraId" />
+            </Principal>
+            <Dependent Role="Tramos">
+              <PropertyRef Name="EstructuraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComponenteFotos_ComponenteDetalles">
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="0..1" />
+          <End Role="InspeccionComponenteFotos" Type="Self.InspeccionComponenteFotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Principal>
+            <Dependent Role="InspeccionComponenteFotos">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComponenteDetalles_Inspecciones">
+          <End Role="Inspecciones" Type="Self.Inspecciones" Multiplicity="0..1" />
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inspecciones">
+              <PropertyRef Name="InspeccionId" />
+            </Principal>
+            <Dependent Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrabajosEstandar_InspeccionComponentes">
+          <End Role="InspeccionComponentes" Type="Self.InspeccionComponentes" Multiplicity="0..1" />
+          <End Role="TrabajosEstandar" Type="Self.TrabajosEstandar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InspeccionComponentes">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Principal>
+            <Dependent Role="TrabajosEstandar">
+              <PropertyRef Name="InspeccionComponenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBPUENTESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auditoria" EntityType="Self.Auditoria" />
+          <EntitySet Name="Catalogos" EntityType="Self.Catalogos" />
+          <EntitySet Name="DatosAdministrativos" EntityType="Self.DatosAdministrativos" />
+          <EntitySet Name="DibujoCroquis" EntityType="Self.DibujoCroquis" />
+          <EntitySet Name="DTDetalles" EntityType="Self.DTDetalles" />
+          <EntitySet Name="DTGeometrias" EntityType="Self.DTGeometrias" />
+          <EntitySet Name="DTLosa" EntityType="Self.DTLosa" />
+          <EntitySet Name="DTMuros" EntityType="Self.DTMuros" />
+          <EntitySet Name="DTSubEstructuras" EntityType="Self.DTSubEstructuras" />
+          <EntitySet Name="DTSuperEstructuras" EntityType="Self.DTSuperEstructuras" />
+          <EntitySet Name="EstructuraDetalles" EntityType="Self.EstructuraDetalles" />
+          <EntitySet Name="Estructuras" EntityType="Self.Estructuras" />
+          <EntitySet Name="InspeccionComponenteFotos" EntityType="Self.InspeccionComponenteFotos" />
+          <EntitySet Name="InspeccionComponentes" EntityType="Self.InspeccionComponentes" />
+          <EntitySet Name="Inspecciones" EntityType="Self.Inspecciones" />
+          <EntitySet Name="Miscelaneas" EntityType="Self.Miscelaneas" />
+          <EntitySet Name="Priorizaciones" EntityType="Self.Priorizaciones" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tablarol" EntityType="Self.tablarol" />
+          <EntitySet Name="tablausuario" EntityType="Self.tablausuario" />
+          <EntitySet Name="TipoCatalogos" EntityType="Self.TipoCatalogos" />
+          <EntitySet Name="TrabajosEstandar" EntityType="Self.TrabajosEstandar" />
+          <EntitySet Name="Tramos" EntityType="Self.Tramos" />
+          <AssociationSet Name="FK_DatosAdministrativos_Puentes" Association="Self.FK_DatosAdministrativos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DatosAdministrativos" EntitySet="DatosAdministrativos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DibujoCroquis_Puentes" Association="Self.FK_DibujoCroquis_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DibujoCroquis" EntitySet="DibujoCroquis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTDetalles_Puentes" Association="Self.FK_DTDetalles_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTDetalles" EntitySet="DTDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosTecnicos_Puentes" Association="Self.FK_DatosTecnicos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTGeometrias" EntitySet="DTGeometrias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTLosa_Estructura" Association="Self.FK_DTLosa_Estructura">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTLosa" EntitySet="DTLosa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTMuros_Estructuras" Association="Self.FK_DTMuros_Estructuras">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTMuros" EntitySet="DTMuros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTSubEstructuras_Puentes" Association="Self.FK_DTSubEstructuras_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTSubEstructuras" EntitySet="DTSubEstructuras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTSuperEstructuras_Puentes" Association="Self.FK_DTSuperEstructuras_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="DTSuperEstructuras" EntitySet="DTSuperEstructuras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuenteDetalle_Puentes" Association="Self.FK_PuenteDetalle_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="EstructuraDetalles" EntitySet="EstructuraDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inspecciones_Puentes" Association="Self.FK_Inspecciones_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Inspecciones" EntitySet="Inspecciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Miscelaneas_Puentes" Association="Self.FK_Miscelaneas_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Miscelaneas" EntitySet="Miscelaneas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Priorizaciones_Puentes" Association="Self.FK_Priorizaciones_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Priorizaciones" EntitySet="Priorizaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tramos_Puentes" Association="Self.FK_Tramos_Puentes">
+            <End Role="Estructuras" EntitySet="Estructuras" />
+            <End Role="Tramos" EntitySet="Tramos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComponenteFotos_ComponenteDetalles" Association="Self.FK_ComponenteFotos_ComponenteDetalles">
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+            <End Role="InspeccionComponenteFotos" EntitySet="InspeccionComponenteFotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComponenteDetalles_Inspecciones" Association="Self.FK_ComponenteDetalles_Inspecciones">
+            <End Role="Inspecciones" EntitySet="Inspecciones" />
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrabajosEstandar_InspeccionComponentes" Association="Self.FK_TrabajosEstandar_InspeccionComponentes">
+            <End Role="InspeccionComponentes" EntitySet="InspeccionComponentes" />
+            <End Role="TrabajosEstandar" EntitySet="TrabajosEstandar" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBPUENTESModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBPUENTESModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBPUENTESModelStoreContainer" CdmEntityContainer="DBPUENTESEntities">
+          <EntitySetMapping Name="Auditoria">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Auditoria">
+              <MappingFragment StoreEntitySet="Auditoria">
+                <ScalarProperty Name="AuditoriaId" ColumnName="AuditoriaId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Entidad" ColumnName="Entidad" />
+                <ScalarProperty Name="ValorKeyEntidad" ColumnName="ValorKeyEntidad" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="UsuarioName" ColumnName="UsuarioName" />
+                <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+                <ScalarProperty Name="ValoresAnterior" ColumnName="ValoresAnterior" />
+                <ScalarProperty Name="ValoresNuevo" ColumnName="ValoresNuevo" />
+                <ScalarProperty Name="MaquinaIp" ColumnName="MaquinaIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalogos">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Catalogos">
+              <MappingFragment StoreEntitySet="Catalogos">
+                <ScalarProperty Name="CatalogoId" ColumnName="CatalogoId" />
+                <ScalarProperty Name="TipoCatalogoId" ColumnName="TipoCatalogoId" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatosAdministrativos">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DatosAdministrativos">
+              <MappingFragment StoreEntitySet="DatosAdministrativos">
+                <ScalarProperty Name="DatosAdminId" ColumnName="DatosAdminId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="AnioReconstruccion" ColumnName="AnioReconstruccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DibujoCroquis">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DibujoCroquis">
+              <MappingFragment StoreEntitySet="DibujoCroquis">
+                <ScalarProperty Name="DibujoCroquisId" ColumnName="DibujoCroquisId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="RutaDibujo" ColumnName="RutaDibujo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTDetalles">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTDetalles">
+              <MappingFragment StoreEntitySet="DTDetalles">
+                <ScalarProperty Name="DTDetalleId" ColumnName="DTDetalleId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="TipoBarandaId" ColumnName="TipoBarandaId" />
+                <ScalarProperty Name="TipoDefensaId" ColumnName="TipoDefensaId" />
+                <ScalarProperty Name="TipoSuperRodId" ColumnName="TipoSuperRodId" />
+                <ScalarProperty Name="TipoJuntaExpId" ColumnName="TipoJuntaExpId" />
+                <ScalarProperty Name="TipoApoyoFSoporteId" ColumnName="TipoApoyoFSoporteId" />
+                <ScalarProperty Name="TipoApoyoMSoporteId" ColumnName="TipoApoyoMSoporteId" />
+                <ScalarProperty Name="TipoApoyoFVigasId" ColumnName="TipoApoyoFVigasId" />
+                <ScalarProperty Name="TipoApoyoMVigasId" ColumnName="TipoApoyoMVigasId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTGeometrias">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTGeometrias">
+              <MappingFragment StoreEntitySet="DTGeometrias">
+                <ScalarProperty Name="DTGeometriaId" ColumnName="DTGeometriaId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="Numeroclaros" ColumnName="Numeroclaros" />
+                <ScalarProperty Name="LongitudClaroMinimo" ColumnName="LongitudClaroMinimo" />
+                <ScalarProperty Name="LongitudClaroMaximos" ColumnName="LongitudClaroMaximos" />
+                <ScalarProperty Name="LongitudTotal" ColumnName="LongitudTotal" />
+                <ScalarProperty Name="AnchoTotal" ColumnName="AnchoTotal" />
+                <ScalarProperty Name="AnchoMediana" ColumnName="AnchoMediana" />
+                <ScalarProperty Name="AnchoAceraIzq" ColumnName="AnchoAceraIzq" />
+                <ScalarProperty Name="AnchoAceraDer" ColumnName="AnchoAceraDer" />
+                <ScalarProperty Name="AnchoCalzada" ColumnName="AnchoCalzada" />
+                <ScalarProperty Name="AnchoBordillos" ColumnName="AnchoBordillos" />
+                <ScalarProperty Name="AnchoAcceso" ColumnName="AnchoAcceso" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="CurvaTangente" ColumnName="CurvaTangente" />
+                <ScalarProperty Name="Esviajamiento" ColumnName="Esviajamiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTLosa">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTLosa">
+              <MappingFragment StoreEntitySet="DTLosa">
+                <ScalarProperty Name="DTLosaId" ColumnName="DTLosaId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="LosaInferior" ColumnName="LosaInferior" />
+                <ScalarProperty Name="LosaSuperior" ColumnName="LosaSuperior" />
+                <ScalarProperty Name="SeccionTrasversa" ColumnName="SeccionTrasversa" />
+                <ScalarProperty Name="DiseñoDeEvaluacion" ColumnName="DiseñoDeEvaluacion" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="Espesor" ColumnName="Espesor" />
+                <ScalarProperty Name="MunicipioID" ColumnName="MunicipioID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTMuros">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTMuros">
+              <MappingFragment StoreEntitySet="DTMuros">
+                <ScalarProperty Name="DTMuroId" ColumnName="DTMuroId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="MuroTipoId" ColumnName="MuroTipoId" />
+                <ScalarProperty Name="MaterialTipoId" ColumnName="MaterialTipoId" />
+                <ScalarProperty Name="Espesor" ColumnName="Espesor" />
+                <ScalarProperty Name="CimentacionTipoId" ColumnName="CimentacionTipoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTSubEstructuras">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTSubEstructuras">
+              <MappingFragment StoreEntitySet="DTSubEstructuras">
+                <ScalarProperty Name="DTSubEstrucId" ColumnName="DTSubEstrucId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="SubEstrucTipoId" ColumnName="SubEstrucTipoId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="TipoCimentacionId" ColumnName="TipoCimentacionId" />
+                <ScalarProperty Name="SubEstrucClasificacionId" ColumnName="SubEstrucClasificacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTSuperEstructuras">
+            <EntityTypeMapping TypeName="DBPUENTESModel.DTSuperEstructuras">
+              <MappingFragment StoreEntitySet="DTSuperEstructuras">
+                <ScalarProperty Name="DTSuperEstrucId" ColumnName="DTSuperEstrucId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="DiseñoTipo" ColumnName="DiseñoTipo" />
+                <ScalarProperty Name="DiseñoSeccTransvId" ColumnName="DiseñoSeccTransvId" />
+                <ScalarProperty Name="DiseñoElevacionId" ColumnName="DiseñoElevacionId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="SuperEstrucClasificacionId" ColumnName="SuperEstrucClasificacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstructuraDetalles">
+            <EntityTypeMapping TypeName="DBPUENTESModel.EstructuraDetalles">
+              <MappingFragment StoreEntitySet="EstructuraDetalles">
+                <ScalarProperty Name="EstructuraDetalleId" ColumnName="EstructuraDetalleId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="PasoCauce" ColumnName="PasoCauce" />
+                <ScalarProperty Name="Desviacion" ColumnName="Desviacion" />
+                <ScalarProperty Name="LongitudRutaDir" ColumnName="LongitudRutaDir" />
+                <ScalarProperty Name="DesviacionPavim" ColumnName="DesviacionPavim" />
+                <ScalarProperty Name="DesviacionEstSeca" ColumnName="DesviacionEstSeca" />
+                <ScalarProperty Name="DesviacionEstLluvia" ColumnName="DesviacionEstLluvia" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estructuras">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Estructuras">
+              <MappingFragment StoreEntitySet="Estructuras">
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="EstructuraTipoId" ColumnName="EstructuraTipoId" />
+                <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CarreteraId" ColumnName="CarreteraId" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+                <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
+                <ScalarProperty Name="PMS" ColumnName="PMS" />
+                <ScalarProperty Name="PKM" ColumnName="PKM" />
+                <ScalarProperty Name="AnioConstruccion" ColumnName="AnioConstruccion" />
+                <ScalarProperty Name="CatalogoCarreteraId" ColumnName="CatalogoCarreteraId" />
+                <ScalarProperty Name="CatalogoRequisitoId" ColumnName="CatalogoRequisitoId" />
+                <ScalarProperty Name="FechaRecoleccionDatos" ColumnName="FechaRecoleccionDatos" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InspeccionComponenteFotos">
+            <EntityTypeMapping TypeName="DBPUENTESModel.InspeccionComponenteFotos">
+              <MappingFragment StoreEntitySet="InspeccionComponenteFotos">
+                <ScalarProperty Name="InspeccionComponenteFotoId" ColumnName="InspeccionComponenteFotoId" />
+                <ScalarProperty Name="InspeccionComponenteId" ColumnName="InspeccionComponenteId" />
+                <ScalarProperty Name="RutaFotos" ColumnName="RutaFotos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InspeccionComponentes">
+            <EntityTypeMapping TypeName="DBPUENTESModel.InspeccionComponentes">
+              <MappingFragment StoreEntitySet="InspeccionComponentes">
+                <ScalarProperty Name="InspeccionComponenteId" ColumnName="InspeccionComponenteId" />
+                <ScalarProperty Name="InspeccionId" ColumnName="InspeccionId" />
+                <ScalarProperty Name="ComponenteId" ColumnName="ComponenteId" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Mantenimiento" ColumnName="Mantenimiento" />
+                <ScalarProperty Name="InspeccionEspecial" ColumnName="InspeccionEspecial" />
+                <ScalarProperty Name="NumFotos" ColumnName="NumFotos" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TipoDañoId" ColumnName="TipoDañoId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inspecciones">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Inspecciones">
+              <MappingFragment StoreEntitySet="Inspecciones">
+                <ScalarProperty Name="InspeccionId" ColumnName="InspeccionId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="TipoInspeccionId" ColumnName="TipoInspeccionId" />
+                <ScalarProperty Name="AnioProxInsp" ColumnName="AnioProxInsp" />
+                <ScalarProperty Name="TransitoTPDA" ColumnName="TransitoTPDA" />
+                <ScalarProperty Name="EstacionConteo" ColumnName="EstacionConteo" />
+                <ScalarProperty Name="VehLivianos" ColumnName="VehLivianos" />
+                <ScalarProperty Name="VehPesados" ColumnName="VehPesados" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Miscelaneas">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Miscelaneas">
+              <MappingFragment StoreEntitySet="Miscelaneas">
+                <ScalarProperty Name="MiscelaneaId" ColumnName="MiscelaneaId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="RespInspeccionId" ColumnName="RespInspeccionId" />
+                <ScalarProperty Name="ProyectistaId" ColumnName="ProyectistaId" />
+                <ScalarProperty Name="LatitudG" ColumnName="LatitudG" />
+                <ScalarProperty Name="LatitudM" ColumnName="LatitudM" />
+                <ScalarProperty Name="LatitudS" ColumnName="LatitudS" />
+                <ScalarProperty Name="LongitudG" ColumnName="LongitudG" />
+                <ScalarProperty Name="LongitudM" ColumnName="LongitudM" />
+                <ScalarProperty Name="LongitudS" ColumnName="LongitudS" />
+                <ScalarProperty Name="Altitud" ColumnName="Altitud" />
+                <ScalarProperty Name="TipoInstalacionesId" ColumnName="TipoInstalacionesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priorizaciones">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Priorizaciones">
+              <MappingFragment StoreEntitySet="Priorizaciones">
+                <ScalarProperty Name="PriorizacionId" ColumnName="PriorizacionId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Pririzacion" ColumnName="Pririzacion" />
+                <ScalarProperty Name="PriorizacionFinal" ColumnName="PriorizacionFinal" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Transito" ColumnName="Transito" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBPUENTESModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tablarol">
+            <EntityTypeMapping TypeName="DBPUENTESModel.tablarol">
+              <MappingFragment StoreEntitySet="tablarol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tablausuario">
+            <EntityTypeMapping TypeName="DBPUENTESModel.tablausuario">
+              <MappingFragment StoreEntitySet="tablausuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Idrol" ColumnName="Idrol" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCatalogos">
+            <EntityTypeMapping TypeName="DBPUENTESModel.TipoCatalogos">
+              <MappingFragment StoreEntitySet="TipoCatalogos">
+                <ScalarProperty Name="TipoCatalogoId" ColumnName="TipoCatalogoId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrabajosEstandar">
+            <EntityTypeMapping TypeName="DBPUENTESModel.TrabajosEstandar">
+              <MappingFragment StoreEntitySet="TrabajosEstandar">
+                <ScalarProperty Name="TrabajoEstandarId" ColumnName="TrabajoEstandarId" />
+                <ScalarProperty Name="InspeccionComponenteId" ColumnName="InspeccionComponenteId" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tramos">
+            <EntityTypeMapping TypeName="DBPUENTESModel.Tramos">
+              <MappingFragment StoreEntitySet="Tramos">
+                <ScalarProperty Name="TramoId" ColumnName="TramoId" />
+                <ScalarProperty Name="EstructuraId" ColumnName="EstructuraId" />
+                <ScalarProperty Name="NumPaso" ColumnName="NumPaso" />
+                <ScalarProperty Name="TipoPasoId" ColumnName="TipoPasoId" />
+                <ScalarProperty Name="PasoPrimero" ColumnName="PasoPrimero" />
+                <ScalarProperty Name="Paso" ColumnName="Paso" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Lado" ColumnName="Lado" />
+                <ScalarProperty Name="PMSkm" ColumnName="PMSkm" />
+                <ScalarProperty Name="PMSm" ColumnName="PMSm" />
+                <ScalarProperty Name="PKMkm" ColumnName="PKMkm" />
+                <ScalarProperty Name="PKMm" ColumnName="PKMm" />
+                <ScalarProperty Name="CargaDiseño" ColumnName="CargaDiseño" />
+                <ScalarProperty Name="ClaseDistribCargaId" ColumnName="ClaseDistribCargaId" />
+                <ScalarProperty Name="NormaDiseñoId" ColumnName="NormaDiseñoId" />
+                <ScalarProperty Name="GaliboVerticalI" ColumnName="GaliboVerticalI" />
+                <ScalarProperty Name="GaliboVerticalIM" ColumnName="GaliboVerticalIM" />
+                <ScalarProperty Name="GaliboVerticalDM" ColumnName="GaliboVerticalDM" />
+                <ScalarProperty Name="GaliboVerticalD" ColumnName="GaliboVerticalD" />
+                <ScalarProperty Name="ClasePuente" ColumnName="ClasePuente" />
+                <ScalarProperty Name="Restringido" ColumnName="Restringido" />
+                <ScalarProperty Name="CargaEjeMaxima" ColumnName="CargaEjeMaxima" />
+                <ScalarProperty Name="ConsultorId" ColumnName="ConsultorId" />
+                <ScalarProperty Name="FechaCapacidad" ColumnName="FechaCapacidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBPUENTESModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBPUENTESModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBPUENTESModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBPUENTESModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBPUENTESModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBPUENTESModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBPUENTESModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBPUENTESModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBPUENTESModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

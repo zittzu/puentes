@@ -1,0 +1,98 @@
+﻿@model puentes.Models.Inspecciones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inspecciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoInspeccionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoInspeccionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnioProxInsp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnioProxInsp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransitoTPDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransitoTPDA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstacionConteo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstacionConteo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehLivianos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehLivianos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehPesados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehPesados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InspeccionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

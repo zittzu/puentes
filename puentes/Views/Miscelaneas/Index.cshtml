@@ -1,0 +1,93 @@
+﻿@model IEnumerable<puentes.Models.Miscelaneas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RespInspeccionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProyectistaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatitudG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatitudM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatitudS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongitudS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Altitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoInstalacionesId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RespInspeccionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProyectistaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatitudG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatitudM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatitudS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongitudS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Altitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoInstalacionesId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MiscelaneaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MiscelaneaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MiscelaneaId })
+        </td>
+    </tr>
+}
+
+</table>

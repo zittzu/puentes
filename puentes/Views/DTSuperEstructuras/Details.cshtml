@@ -1,0 +1,66 @@
+﻿@model puentes.Models.DTSuperEstructuras
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DTSuperEstructuras</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DiseñoTipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiseñoTipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiseñoSeccTransvId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiseñoSeccTransvId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiseñoElevacionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiseñoElevacionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuperEstrucClasificacionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuperEstrucClasificacionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DTSuperEstrucId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

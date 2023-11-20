@@ -1,0 +1,69 @@
+﻿@model IEnumerable<puentes.Models.Priorizaciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pririzacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriorizacionFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pririzacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriorizacionFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estructuras.Identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PriorizacionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PriorizacionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PriorizacionId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,74 @@
+﻿@model puentes.Models.Priorizaciones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Priorizaciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pririzacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pririzacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriorizacionFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriorizacionFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PriorizacionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿@model puentes.Models.EstructuraDetalles
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EstructuraDetalles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PasoCauce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasoCauce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desviacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desviacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongitudRutaDir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongitudRutaDir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesviacionPavim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesviacionPavim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesviacionEstSeca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesviacionEstSeca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesviacionEstLluvia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesviacionEstLluvia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

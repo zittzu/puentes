@@ -1,0 +1,93 @@
+﻿@model IEnumerable<puentes.Models.InspeccionComponentes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponenteId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mantenimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InspeccionEspecial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFotos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDañoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inspecciones.Observaciones)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponenteId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mantenimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InspeccionEspecial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFotos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDañoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inspecciones.Observaciones)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InspeccionComponenteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InspeccionComponenteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InspeccionComponenteId })
+        </td>
+    </tr>
+}
+
+</table>

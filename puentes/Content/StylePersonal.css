@@ -1,0 +1,111 @@
+﻿    /*Estilos Generales*//*Estilos Generales*/
+      body {
+        /*color:#757575;*/
+    }
+
+    #CentroPage
+    {
+        background-image: url("../Content/Plantilla_MaterialPro/assets/images/personales/seigaiha.png");      
+        background-repeat: repeat-y repeat-x;
+        /*background-color: #FFFFFF;*/
+    }
+
+     #backUser
+    {
+        background: #f32c53; 
+        background: -webkit-linear-gradient(to top, #FFFFFF, #f32c53);  
+        background: linear-gradient(to top, #FFFFFF, #f32c53); 
+    }
+
+    .modalRedondo{
+        border-radius: 20px;
+    }   
+
+    /*Jqwigets*/
+    .jqx-widget-content
+    {
+        font-size:10px;
+    }
+
+   #sidebarnav span {
+        font-size:13px;
+    }
+
+     .Highlight_yellow {
+            background-color: #fb9348;
+        }
+
+        .tag-title-info {
+            background: transparent;
+            width: 1px;
+            height: 0px;
+            border-color: #4272b8 transparent #4272b8 #4272b8 !important;
+            border-width: 26px 26px;
+            border-style: solid;
+            z-index: 1000;
+            top: 0px;
+            position: absolute;
+            left: 598px;
+        }
+
+        .tag-title {
+            font-size: 16px;
+            color: #fff;
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            line-height: 100%;
+            background: #4272b8 !important;
+            height: 52px;
+            padding: 0px;
+            margin: 0px;
+            top: 0px;
+            width: 500px;
+            vertical-align: middle;
+        }
+
+        .cart-top {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 35px;
+            position: absolute;
+            left: 500px;
+            top: 0;
+            color: #fff;
+            padding: 16px 14px 1px 14px;
+            font-size: 11px;
+            font-weight: 400;
+            background: #4272b8 !important;
+            z-index: 199;
+        }
+
+            .cart-top p {
+                font-weight: bold;
+                font-size: 11px;
+                background: url(../../images/cart-icon.png) no-repeat right center;
+                min-height: 16px;
+                text-align: left;
+                padding: 0 24px 0 0;
+                margin-top: 2px;
+                float: left;
+                font-size: 11px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+    #comboPais{
+        width: 365%;
+        color: #37474F;
+    }   
+
+     .cardHeader{              
+            margin-top:30px;              
+    }
+
+     .modal-header{
+         background-color:#014B96
+     }
+
+      
+   
+
+    

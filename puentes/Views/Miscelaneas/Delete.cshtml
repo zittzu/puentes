@@ -1,0 +1,112 @@
+﻿@model puentes.Models.Miscelaneas
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Miscelaneas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RespInspeccionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RespInspeccionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProyectistaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProyectistaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatitudG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatitudG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatitudM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatitudM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatitudS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatitudS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongitudG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongitudG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongitudM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongitudM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongitudS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongitudS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Altitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Altitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoInstalacionesId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoInstalacionesId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

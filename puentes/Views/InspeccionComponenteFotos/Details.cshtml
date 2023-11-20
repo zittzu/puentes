@@ -1,0 +1,34 @@
+﻿@model puentes.Models.InspeccionComponenteFotos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InspeccionComponenteFotos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RutaFotos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RutaFotos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspeccionComponentes.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspeccionComponentes.Calificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InspeccionComponenteFotoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<puentes.Models.InspeccionComponenteFotos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RutaFotos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InspeccionComponentes.Calificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RutaFotos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InspeccionComponentes.Calificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InspeccionComponenteFotoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InspeccionComponenteFotoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InspeccionComponenteFotoId })
+        </td>
+    </tr>
+}
+
+</table>

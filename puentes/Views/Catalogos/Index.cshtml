@@ -1,0 +1,60 @@
+﻿@model IEnumerable<puentes.Models.Catalogos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+<div class="row " style="padding-top:2em;">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-outline-verde">
+                <h3 class="m-b-0 text-themecolor"><i class="mdi  mdi-clipboard-outline" aria-hidden="true" style="margin-bottom:20px;"></i> Catalogo </h3>
+            </div>
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TipoCatalogoId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstadoId)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoCatalogoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EstadoId)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CatalogoId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CatalogoId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CatalogoId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

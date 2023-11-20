@@ -1,0 +1,210 @@
+﻿@model puentes.Models.Tramos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tramos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumPaso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumPaso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPasoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPasoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasoPrimero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasoPrimero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PMSkm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PMSkm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PMSm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PMSm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PKMkm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PKMkm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PKMm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PKMm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargaDiseño)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargaDiseño)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaseDistribCargaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaseDistribCargaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NormaDiseñoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NormaDiseñoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GaliboVerticalI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GaliboVerticalI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GaliboVerticalIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GaliboVerticalIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GaliboVerticalDM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GaliboVerticalDM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GaliboVerticalD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GaliboVerticalD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClasePuente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClasePuente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restringido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restringido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargaEjeMaxima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargaEjeMaxima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estructuras.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estructuras.Identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TramoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

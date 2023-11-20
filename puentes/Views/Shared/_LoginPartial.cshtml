@@ -1,0 +1,58 @@
+﻿@*@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}*@
+<style>
+    .dropdown-menu {
+        padding: 0;
+    }
+</style>
+
+@if (Request.IsAuthenticated)
+{
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:12px;"><img src="~/Content/Plantilla_MaterialPro/assets/images/personales/usuario.png" alt="user" class="profile-pic" /></a>
+            <div class="dropdown-menu dropdown-menu-right scale-up">
+                <ul class="dropdown-user">
+                    <li>
+                        <div class="card dw-user-box" style="margin:0; padding:0">
+                            <img class="" src="~/Content/Plantilla_MaterialPro/assets/images/background/profile-bg.jpg" alt="Card image cap">
+                            <div class="card-body little-profile text-center">
+                                <div class="pro-img"><img src="~/Content/Plantilla_MaterialPro/assets/images/personales/usuario.png" alt="user"></div>
+                                <h3 class="m-b-0">nombre usuario</h3>
+                                <hr />
+                                <span>cargo</span>
+                                <hr />
+                                <a href="@Url.Action("ChangePassword", "Account", new { area = "" })" class="m-t-10 waves-effect waves-dark btn btn-warning btn-md btn-rounded" title="Cambiar Contraseña" style="color:#fff">Cambiar Contraseña</a>
+                                <hr />
+                                @using (Html.BeginForm("LogOff", "Account", new { Area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "" }))
+                                {
+                                    <p></p><a href="javascript:document.getElementById('logoutForm').submit()" class="m-t-10 waves-effect waves-dark btn btn-danger btn-md btn-rounded" style="color:#fff">Cerrar Sessión</a>
+                                }
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+}

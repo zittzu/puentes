@@ -1,0 +1,106 @@
+﻿@model puentes.Models.InspeccionComponentes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InspeccionComponentes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponenteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponenteId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mantenimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mantenimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InspeccionEspecial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InspeccionEspecial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumFotos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumFotos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDañoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDañoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspecciones.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inspecciones.Observaciones)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InspeccionComponenteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
